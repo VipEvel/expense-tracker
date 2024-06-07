@@ -5,7 +5,6 @@ This is a simple Expense Tracker application built with React. It allows users t
 ## Table of Contents
 
 - [Features](#features)
-- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
@@ -19,9 +18,6 @@ This is a simple Expense Tracker application built with React. It allows users t
 - Show balance, total income, and total expenses
 - Responsive design
 
-## Demo
-
-You can view a live demo of the application [here](will provide).
 
 ## Installation
 

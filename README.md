@@ -29,27 +29,27 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
 
-   \`\`\`bash
+   ```bash
    git clone not yet
-   \`\`\`
+   ```
 
 2. Navigate to the project directory
 
 3. Install the dependencies:
 
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 ## Usage
 
 To start the development server, run:
 
-\`\`\`bash
+```bash
 npm run start
-\`\`\`
+```
 
-This will start the app on \`http://localhost:3000\`.
+This will start the app on `http://localhost:3000`.
 
 ### Adding a Transaction
 

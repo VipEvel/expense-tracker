@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import moment from "moment";
 
 export const AddTransaction = () => {
   const [text, setText] = useState("");
@@ -12,13 +13,17 @@ export const AddTransaction = () => {
     e.preventDefault();
 
     const newTransaction = {
-      id: Math.floor(Math.random() * 100000000),
+      id: Math.floor(Math.random() * 100000000) + amount,
       text,
       amount: amount,
       type: selectedOption,
+      date: moment().format("DD MMMM, YYYY"),
     };
 
     addTransaction(newTransaction);
+    setText("");
+    setAmount(0);
+    setSelectedOption("credit");
   };
 
   const handleSelectChange = (event) => {
@@ -47,6 +52,7 @@ export const AddTransaction = () => {
                 value={amount}
                 onChange={(e) => setAmount(parseInt(e.target.value))}
                 placeholder="Enter amount"
+                min={0}
               />
             </div>
             <div className="form-control">
@@ -68,7 +74,9 @@ export const AddTransaction = () => {
             </div>
           </div>
         </div>
-        <button className="btn">Add transaction</button>
+        <button className="btn" disabled={amount <= 0}>
+          Add transaction
+        </button>
       </form>
     </>
   );

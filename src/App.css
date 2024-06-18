@@ -106,7 +106,7 @@ textarea[type="text"] {
 
 .btn {
   cursor: pointer;
-  background-color: #9c88ff;
+  background-color: #4b33ff;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -115,6 +115,11 @@ textarea[type="text"] {
   margin: 10px 0 30px;
   padding: 10px;
   width: 100%;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .btn:focus,
@@ -178,6 +183,17 @@ textarea[type="text"] {
   display: flex;
 }
 
-.main-wrapper{
-padding: 20px;
+.main-wrapper {
+  padding: 20px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.light-text {
+  color: #333;
+  opacity: 0.5;
 }

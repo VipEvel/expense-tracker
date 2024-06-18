@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import moment from "moment";
 
 //Money formatter function
 function moneyFormatter(num) {
-  console.log(num)
   let p = num.toFixed(2).split(".");
   return (
     "₹ " +
@@ -25,7 +25,15 @@ export const Transaction = ({ transaction }) => {
 
   return (
     <li className={transaction.type === "debit" ? "minus" : "plus"}>
-      {transaction.text}{" "}
+      <span className="flex-col">
+        <span>{transaction.text}</span>
+        {!!transaction?.date && (
+          <span className="light-text">
+            {moment(transaction?.date).format("DD MMMM, YYYY")} |{" "}
+            {moment(transaction?.date).format("LT")}
+          </span>
+        )}
+      </span>
       <span>
         {sign}
         {moneyFormatter(transaction.amount)}
